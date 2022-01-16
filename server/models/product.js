@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema(
             type: String,
             trim: true,
             required: true,
-            maxlength: 132,
+            maxlength: 32,
             text: true,
         },
         slug: {
@@ -56,12 +56,13 @@ const productSchema = new mongoose.Schema(
         },
         brand: {
             type: String,
-            enum: ["RENIAL", "Amitasha", "HILLSTAR", "MANIYA", "ARCHSIGN"],
+            enum: ["Apple", "Samsung", "Microsoft", "Lenovo", "ASUS"],
         },
         ratings: [
             {
                 star: Number,
                 postedBy: { type: ObjectId, ref: "User" },
+
             },
         ],
     },
