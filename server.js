@@ -6,7 +6,7 @@ const cors = require("cors");
 const { readdirSync } = require("fs");
 require("dotenv").config();
 
-// port
+// port //
 const port = process.env.PORT || 8000;
 
 // app
@@ -30,7 +30,7 @@ app.use(cors());
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 
 app.get('/', (req, res) => {
-    res.send("Hi it is running")
+    res.send("Hi it is running fine")
 })
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
