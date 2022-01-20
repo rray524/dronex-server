@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
 // middleware
 app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // routes middleware
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
